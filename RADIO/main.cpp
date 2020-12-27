@@ -9,7 +9,7 @@ using namespace std;
 int main() {
 	void* context = zmq_ctx_new();
 	void* radio = zmq_socket(context, ZMQ_RADIO);
-	if (zmq_connect(radio, "tcp://127.0.0.1:5556") == -1) {
+	if (zmq_connect(radio, "udp://127.0.0.1:5556") == -1) {
 		cout << "failed connect" << endl;
 		return -1;
 	}
