@@ -11,7 +11,7 @@ using namespace std;
 
 void assert(bool a) {
 	if (!a) {
-		cout << "failed" << endl;
+		cout << "failed - " << zmq_errno << endl;
 		throw;
 	}
 }
@@ -25,7 +25,7 @@ int main() {
 	void* radio = zmq_socket(context, ZMQ_RADIO);
 	assert(radio != nullptr);
 
-	rc = zmq_bind(radio, "udp://224.0.0.1:28650");
+	rc = zmq_connect(radio, "udp://224.0.0.1:28650");
 	assert(rc == 0);
 
 	cout << "init success" << endl;
