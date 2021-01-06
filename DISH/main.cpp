@@ -10,7 +10,7 @@ using namespace std;
 
 int main() {
 
-	cout << "zmq: " << zmq_has("draft") << endl;
+	//cout << "zmq: " << zmq_has("draft") << endl;
 
 	void* context = zmq_ctx_new();
 
